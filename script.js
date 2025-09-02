@@ -1,12 +1,122 @@
+// Product data
+const productData = {
+    arroz: {
+        name: "Jabón de Arroz",
+        price: 48.00,
+        description: "Exfoliante suave con propiedades nutritivas que ayuda a aclarar y suavizar la piel naturalmente. Rico en vitaminas y minerales.",
+        benefits: [
+            "Exfoliación suave y natural",
+            "Propiedades iluminadoras",
+            "Rico en vitaminas B y E",
+            "Ayuda a aclarar manchas",
+            "Textura cremosa y suave"
+        ],
+        ingredients: "Aceite de coco, aceite de oliva, hidróxido de sodio, harina de arroz, agua destilada, aceite esencial de limón.",
+        usage: "Humedece la piel, aplica el jabón con movimientos circulares suaves, deja actuar 1-2 minutos y enjuaga con agua tibia. Usa 2-3 veces por semana para mejores resultados.",
+        class: "arroz"
+    },
+    avena: {
+        name: "Jabón de Avena",
+        price: 42.00,
+        description: "Exfoliante suave, ideal para pieles sensibles y delicadas. Remueve células muertas sin irritar la piel.",
+        benefits: [
+            "Exfoliación delicada",
+            "Calma irritaciones",
+            "Hidrata profundamente",
+            "Apto para pieles sensibles",
+            "Propiedades antiinflamatorias"
+        ],
+        ingredients: "Aceite de coco, manteca de karité, avena coloidal, miel natural, aceite de almendras dulces, agua destilada.",
+        usage: "Aplica sobre piel húmeda con masajes circulares muy suaves. Ideal para uso diario. Evita el área de los ojos.",
+        class: "avena"
+    },
+    miel: {
+        name: "Jabón de Miel",
+        price: 52.00,
+        description: "Hidratante natural con propiedades antibacterianas y suavizantes. Ideal para pieles secas y sensibles.",
+        benefits: [
+            "Hidratación profunda",
+            "Propiedades antibacterianas",
+            "Nutre la piel",
+            "Acelera la cicatrización",
+            "Antioxidante natural"
+        ],
+        ingredients: "Miel pura de abeja, aceite de oliva, aceite de coco, manteca de cacao, propóleo, cera de abeja.",
+        usage: "Aplica sobre piel húmeda, deja actuar unos minutos para que la miel penetre, luego enjuaga. Perfecto para uso nocturno.",
+        class: "miel"
+    },
+    carbon: {
+        name: "Jabón de Carbón Activado",
+        price: 55.00,
+        description: "Purificante y detox, perfecto para pieles grasas y mixtas. Absorbe impurezas y controla la grasa.",
+        benefits: [
+            "Purifica profundamente",
+            "Absorbe impurezas",
+            "Controla la grasa",
+            "Minimiza poros",
+            "Efecto detox"
+        ],
+        ingredients: "Carbón activado de bambú, aceite de árbol de té, arcilla bentonítica, aceite de coco, aceite de ricino.",
+        usage: "Usa 2-3 veces por semana sobre piel húmeda. Masajea suavemente y deja actuar 2-3 minutos antes de enjuagar. Evita el uso excesivo.",
+        class: "carbon"
+    },
+    arcillas: {
+        name: "Jabón de Arcillas",
+        price: 58.00,
+        description: "Purificante profundo con arcillas naturales. Ideal para limpiar poros y equilibrar la piel grasa.",
+        benefits: [
+            "Limpieza profunda de poros",
+            "Equilibra la piel grasa",
+            "Rica en minerales",
+            "Efecto matificante",
+            "Mejora la textura de la piel"
+        ],
+        ingredients: "Arcilla verde francesa, arcilla blanca, aceite de jojoba, aceite esencial de romero, agua de rosas.",
+        usage: "Aplica sobre rostro húmedo evitando el contorno de ojos. Deja secar 5-10 minutos hasta formar una mascarilla ligera, luego enjuaga con agua tibia.",
+        class: "arcillas"
+    },
+    hierbas: {
+        name: "Jabón de Hierbas Secas",
+        price: 46.00,
+        description: "Aromático y relajante con mezcla de hierbas naturales. Propiedades calmantes y antioxidantes.",
+        benefits: [
+            "Aroma relajante natural",
+            "Propiedades antioxidantes",
+            "Calma la piel irritada",
+            "Mejora la circulación",
+            "Efecto aromaterápico"
+        ],
+        ingredients: "Lavanda seca, manzanilla, romero, tomillo, aceite esencial de eucalipto, aceite de oliva virgen.",
+        usage: "Perfecto para uso nocturno o después del ejercicio. Aplica con masajes suaves para liberar los aromas. Ideal para relajación.",
+        class: "hierbas"
+    },
+    aceites: {
+        name: "Jabón de Aceites Vegetales",
+        price: 50.00,
+        description: "Hidratación profunda con aceites vegetales naturales. Aromas y colores únicos en cada pieza artesanal.",
+        benefits: [
+            "Hidratación intensa",
+            "Nutrición profunda",
+            "Colores naturales únicos",
+            "Aromas personalizados",
+            "Textura cremosa"
+        ],
+        ingredients: "Aceite de aguacate, aceite de argán, aceite de rosa mosqueta, manteca de murumuru, colorantes naturales.",
+        usage: "Aplica generosamente sobre piel húmeda. Su fórmula rica es ideal para pieles muy secas. Cada pieza tiene aromas y colores únicos.",
+        class: "aceites"
+    }
+};
+
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all functionality
     initializeNavigation();
     initializeAnimations();
     initializeScrollEffects();
     initializeFormHandling();
     initializeProductInteractions();
     initializePageSpecific();
+    initializeProductModal();
+    initializeCartSidebar();
     hideLoadingScreen();
 });
 
@@ -16,13 +126,11 @@ function initializeNavigation() {
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-menu a');
     
-    // Mobile menu toggle
     if (hamburger) {
         hamburger.addEventListener('click', function() {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
             
-            // Animate hamburger
             const spans = hamburger.querySelectorAll('span');
             if (hamburger.classList.contains('active')) {
                 spans[0].style.transform = 'rotate(-45deg) translate(-5px, 6px)';
@@ -36,13 +144,11 @@ function initializeNavigation() {
         });
     }
     
-    // Close menu when clicking on links
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             if (hamburger) hamburger.classList.remove('active');
             if (navMenu) navMenu.classList.remove('active');
             
-            // Reset hamburger animation
             const spans = hamburger?.querySelectorAll('span');
             if (spans) {
                 spans[0].style.transform = 'none';
@@ -52,7 +158,6 @@ function initializeNavigation() {
         });
     });
     
-    // Header scroll effect
     let lastScrollTop = 0;
     const header = document.querySelector('.header');
     
@@ -68,7 +173,6 @@ function initializeNavigation() {
                 header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
             }
             
-            // Hide/show header on scroll
             if (scrollTop > lastScrollTop && scrollTop > 200) {
                 header.style.transform = 'translateY(-100%)';
             } else {
@@ -82,15 +186,12 @@ function initializeNavigation() {
 
 // Animation Initialization
 function initializeAnimations() {
-    // Check if IntersectionObserver is supported
     if (!('IntersectionObserver' in window)) {
-        // Fallback for older browsers
         const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
         elementsToAnimate.forEach(el => el.classList.add('animated'));
         return;
     }
 
-    // Animate elements on scroll
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -100px 0px'
@@ -101,7 +202,6 @@ function initializeAnimations() {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animated');
                 
-                // Add stagger effect for grids
                 if (entry.target.classList.contains('products-grid') || 
                     entry.target.classList.contains('benefits-grid') ||
                     entry.target.classList.contains('features-grid') ||
@@ -112,7 +212,6 @@ function initializeAnimations() {
         });
     }, observerOptions);
 
-    // Observe elements
     const elementsToAnimate = document.querySelectorAll('.product-card, .benefit-card, .feature-card, .ingredient-card, .about-content, .contact-content, .section-header, .animate-on-scroll');
     elementsToAnimate.forEach(el => {
         if (!el.classList.contains('animate-on-scroll')) {
@@ -135,7 +234,6 @@ function animateGridItems(grid) {
 
 // Scroll Effects
 function initializeScrollEffects() {
-    // Parallax effect for hero section
     window.addEventListener('scroll', function() {
         const scrolled = window.pageYOffset;
         const hero = document.querySelector('.hero');
@@ -145,7 +243,6 @@ function initializeScrollEffects() {
             heroContent.style.transform = `translateY(${scrolled * 0.1}px)`;
         }
         
-        // Floating soaps animation based on scroll
         const soaps = document.querySelectorAll('.soap');
         soaps.forEach((soap, index) => {
             const speed = 0.02 + (index * 0.01);
@@ -157,7 +254,6 @@ function initializeScrollEffects() {
 // Form Handling
 function initializeFormHandling() {
     const contactForm = document.querySelector('#contactForm');
-    
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -165,7 +261,6 @@ function initializeFormHandling() {
         });
     }
     
-    // Newsletter form
     const newsletterForm = document.querySelector('#newsletterForm');
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', function(e) {
@@ -174,7 +269,6 @@ function initializeFormHandling() {
         });
     }
     
-    // General contact form (for single page version)
     const generalForm = document.querySelector('.contact-form form');
     if (generalForm && !generalForm.id) {
         generalForm.addEventListener('submit', function(e) {
@@ -183,7 +277,6 @@ function initializeFormHandling() {
         });
     }
     
-    // Form input animations
     const inputs = document.querySelectorAll('.form-group input, .form-group textarea, .form-group select');
     inputs.forEach(input => {
         input.addEventListener('focus', function() {
@@ -206,7 +299,6 @@ function handleContactForm(form) {
     const mensaje = form.querySelector('#mensaje')?.value || '';
     const politicas = form.querySelector('#politicas')?.checked || false;
     
-    // Validation
     if (!nombre || !apellido || !email || !mensaje) {
         showNotification('Por favor completa todos los campos obligatorios', 'error');
         return;
@@ -258,7 +350,6 @@ function handleGeneralContactForm(form) {
     const email = form.querySelector('input[type="email"]')?.value || '';
     const message = form.querySelector('textarea')?.value || '';
     
-    // Simple validation
     if (!name || !email || !message) {
         showNotification('Por favor completa todos los campos', 'error');
         return;
@@ -286,7 +377,6 @@ function submitForm(form, successMessage) {
         submitBtn.innerHTML = '<i class="fas fa-check"></i> ¡Enviado!';
         showNotification(successMessage, 'success');
         
-        // Reset form
         form.reset();
         
         setTimeout(() => {
@@ -304,7 +394,6 @@ function isValidEmail(email) {
 
 // Notification System
 function showNotification(message, type = 'info') {
-    // Remove existing notifications
     const existingNotifications = document.querySelectorAll('.notification');
     existingNotifications.forEach(notif => notif.remove());
     
@@ -317,7 +406,6 @@ function showNotification(message, type = 'info') {
         </div>
     `;
     
-    // Add styles
     notification.style.cssText = `
         position: fixed;
         top: 20px;
@@ -336,13 +424,11 @@ function showNotification(message, type = 'info') {
     
     document.body.appendChild(notification);
     
-    // Animate in
     setTimeout(() => {
         notification.style.opacity = '1';
         notification.style.transform = 'translateX(0)';
     }, 100);
     
-    // Auto remove
     setTimeout(() => {
         notification.style.opacity = '0';
         notification.style.transform = 'translateX(100%)';
@@ -358,12 +444,10 @@ function showNotification(message, type = 'info') {
 function initializeProductInteractions() {
     const productCards = document.querySelectorAll('.product-card');
     const addToCartBtns = document.querySelectorAll('.btn-product');
-    let cart = JSON.parse(localStorage.getItem('natuaroma_cart') || '[]');
     
-    // Product card hover effects
     productCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
-            if (window.innerWidth > 768) { // Only on desktop
+            if (window.innerWidth > 768) {
                 this.style.transform = 'translateY(-10px)';
             }
         });
@@ -373,114 +457,256 @@ function initializeProductInteractions() {
         });
     });
     
-    // Add to cart functionality
     addToCartBtns.forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
-            
-            const productCard = this.closest('.product-card');
-            if (!productCard) return;
-            
-            const productName = productCard.querySelector('h3')?.textContent || 'Producto';
-            const productPriceElement = productCard.querySelector('.product-price');
-            const productPrice = productPriceElement?.textContent || '$0.00';
-            
-            // Add to cart
-            const product = {
-                id: Date.now(),
-                name: productName,
-                price: productPrice
-            };
-            
-            cart.push(product);
-            localStorage.setItem('natuaroma_cart', JSON.stringify(cart));
-            
-            // Animation effect
-            const originalText = this.innerHTML;
-            this.innerHTML = '<i class="fas fa-check"></i> ¡Agregado!';
-            this.style.background = '#4CAF50';
-            
-            // Create floating animation
-            createFloatingAnimation(productCard);
-            
-            // Update cart summary
-            updateCartSummary();
-            
-            // Show notification
-            showNotification(`${productName} agregado al carrito (${productPrice})`, 'success');
-            
-            // Reset button
-            setTimeout(() => {
-                this.innerHTML = originalText;
-                this.style.background = '';
-            }, 2000);
-        });
-    });
-    
-    // Initialize cart summary
-    updateCartSummary();
-}
-
-// Create floating animation
-function createFloatingAnimation(productCard) {
-    const floatingIcon = document.createElement('div');
-    floatingIcon.innerHTML = '<i class="fas fa-shopping-cart"></i>';
-    floatingIcon.style.cssText = `
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: #4CAF50;
-        font-size: 1.5rem;
-        pointer-events: none;
-        z-index: 1000;
-        animation: floatToCart 1s ease-out forwards;
-    `;
-    
-    productCard.style.position = 'relative';
-    productCard.appendChild(floatingIcon);
-    
-    setTimeout(() => {
-        if (floatingIcon.parentNode) {
-            floatingIcon.remove();
-        }
-    }, 1000);
-}
-
-// Update cart summary
-function updateCartSummary() {
-    const cartSummary = document.querySelector('.cart-summary');
-    const cartItems = document.querySelector('.cart-items');
-    const cartTotal = document.querySelector('.cart-total');
-    const checkoutBtn = document.querySelector('.btn-checkout');
-    
-    if (!cartSummary) return;
-    
-    const cart = JSON.parse(localStorage.getItem('natuaroma_cart') || '[]');
-    
-    if (cart.length === 0) {
-        cartItems.innerHTML = '<p>No hay productos en el carrito</p>';
-        cartTotal.innerHTML = '<strong>Total: $0.00</strong>';
-        if (checkoutBtn) checkoutBtn.disabled = true;
-        cartSummary.classList.remove('active');
-    } else {
-        let total = 0;
-        cartItems.innerHTML = '';
-        
-        cart.forEach(item => {
-            const itemDiv = document.createElement('div');
-            itemDiv.innerHTML = `<p>${item.name} - ${item.price}</p>`;
-            cartItems.appendChild(itemDiv);
-            
-            const price = parseFloat(item.price.replace('$', ''));
-            if (!isNaN(price)) {
-                total += price;
+            const productId = this.getAttribute('data-product');
+            if (productId && productData[productId]) {
+                openProductModal(productId);
             }
         });
-        
-        cartTotal.innerHTML = `<strong>Total: $${total.toFixed(2)}</strong>`;
-        if (checkoutBtn) checkoutBtn.disabled = false;
-        cartSummary.classList.add('active');
+    });
+}
+
+// Product Modal System
+function initializeProductModal() {
+    const modal = document.getElementById('productModal');
+    const modalClose = document.getElementById('modalClose');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modalAddToCart = document.getElementById('modalAddToCart');
+    
+    if (modalClose) {
+        modalClose.addEventListener('click', closeProductModal);
+    }
+    
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', closeProductModal);
+    }
+    
+    if (modalAddToCart) {
+        modalAddToCart.addEventListener('click', function() {
+            const productId = this.getAttribute('data-product');
+            if (productId) {
+                addToCart(productId);
+                closeProductModal();
+            }
+        });
+    }
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+            closeProductModal();
+        }
+    });
+}
+
+// Open Product Modal
+function openProductModal(productId) {
+    const product = productData[productId];
+    if (!product) return;
+    
+    const modal = document.getElementById('productModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+    const modalBenefitsList = document.getElementById('modalBenefitsList');
+    const modalIngredients = document.getElementById('modalIngredients');
+    const modalUsage = document.getElementById('modalUsage');
+    const modalPrice = document.getElementById('modalPrice');
+    const modalSoapVisual = document.getElementById('modalSoapVisual');
+    const modalAddToCart = document.getElementById('modalAddToCart');
+    
+    if (modalTitle) modalTitle.textContent = product.name;
+    if (modalDescription) modalDescription.textContent = product.description;
+    if (modalIngredients) modalIngredients.textContent = product.ingredients;
+    if (modalUsage) modalUsage.textContent = product.usage;
+    if (modalPrice) modalPrice.textContent = `$${product.price.toFixed(2)}`;
+    
+    if (modalSoapVisual) {
+        modalSoapVisual.className = `modal-soap-visual ${product.class}`;
+    }
+    
+    if (modalBenefitsList) {
+        modalBenefitsList.innerHTML = '';
+        product.benefits.forEach(benefit => {
+            const li = document.createElement('li');
+            li.textContent = benefit;
+            modalBenefitsList.appendChild(li);
+        });
+    }
+    
+    if (modalAddToCart) {
+        modalAddToCart.setAttribute('data-product', productId);
+    }
+    
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+// Close Product Modal
+function closeProductModal() {
+    const modal = document.getElementById('productModal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// Cart System
+function initializeCartSidebar() {
+    const cartToggle = document.getElementById('cartToggle');
+    const cartSidebar = document.getElementById('cartSidebar');
+    const cartClose = document.getElementById('cartClose');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    
+    if (cartToggle) {
+        cartToggle.addEventListener('click', toggleCartSidebar);
+    }
+    
+    if (cartClose) {
+        cartClose.addEventListener('click', closeCartSidebar);
+    }
+    
+    if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', function() {
+            if (!this.disabled) {
+                showNotification('¡Gracias! Procesando tu pedido...', 'success');
+            }
+        });
+    }
+    
+    updateCartDisplay();
+}
+
+// Toggle Cart Sidebar
+function toggleCartSidebar() {
+    const cartSidebar = document.getElementById('cartSidebar');
+    if (cartSidebar) {
+        cartSidebar.classList.toggle('active');
+        if (cartSidebar.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    }
+}
+
+// Close Cart Sidebar
+function closeCartSidebar() {
+    const cartSidebar = document.getElementById('cartSidebar');
+    if (cartSidebar) {
+        cartSidebar.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// Add to Cart
+function addToCart(productId) {
+    const product = productData[productId];
+    if (!product) return;
+    
+    let cart = [];
+    try {
+        cart = JSON.parse(localStorage.getItem('natuaroma_cart') || '[]');
+    } catch (e) {
+        cart = [];
+    }
+    
+    const cartItem = {
+        id: Date.now(),
+        productId: productId,
+        name: product.name,
+        price: product.price,
+        class: product.class
+    };
+    
+    cart.push(cartItem);
+    
+    try {
+        localStorage.setItem('natuaroma_cart', JSON.stringify(cart));
+    } catch (e) {
+        console.warn('No se pudo guardar en localStorage');
+    }
+    
+    updateCartDisplay();
+    showNotification(`${product.name} agregado al carrito`, 'success');
+    
+    setTimeout(() => {
+        toggleCartSidebar();
+    }, 500);
+}
+
+// Remove from Cart
+function removeFromCart(itemId) {
+    let cart = [];
+    try {
+        cart = JSON.parse(localStorage.getItem('natuaroma_cart') || '[]');
+    } catch (e) {
+        cart = [];
+    }
+    
+    cart = cart.filter(item => item.id !== itemId);
+    
+    try {
+        localStorage.setItem('natuaroma_cart', JSON.stringify(cart));
+    } catch (e) {
+        console.warn('No se pudo guardar en localStorage');
+    }
+    
+    updateCartDisplay();
+    showNotification('Producto eliminado del carrito', 'info');
+}
+
+// Update Cart Display
+function updateCartDisplay() {
+    let cart = [];
+    try {
+        cart = JSON.parse(localStorage.getItem('natuaroma_cart') || '[]');
+    } catch (e) {
+        cart = [];
+    }
+    
+    const cartCount = document.getElementById('cartCount');
+    const cartItems = document.getElementById('cartItems');
+    const cartTotal = document.getElementById('cartTotal');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    
+    if (cartCount) {
+        cartCount.textContent = cart.length;
+        cartCount.classList.toggle('hidden', cart.length === 0);
+    }
+    
+    if (cartItems) {
+        if (cart.length === 0) {
+            cartItems.innerHTML = '<p class="empty-cart">No hay productos en el carrito</p>';
+        } else {
+            cartItems.innerHTML = '';
+            cart.forEach(item => {
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <div class="cart-item-image ${item.class}"></div>
+                    <div class="cart-item-info">
+                        <h4>${item.name}</h4>
+                        <p>$${item.price.toFixed(2)}</p>
+                    </div>
+                    <button class="cart-item-remove" onclick="removeFromCart(${item.id})">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                `;
+                cartItems.appendChild(cartItem);
+            });
+        }
+    }
+    
+    if (cartTotal) {
+        const total = cart.reduce((sum, item) => sum + item.price, 0);
+        cartTotal.textContent = total.toFixed(2);
+    }
+    
+    if (checkoutBtn) {
+        checkoutBtn.disabled = cart.length === 0;
     }
 }
 
@@ -507,11 +733,9 @@ function initializeProductFilters() {
         btn.addEventListener('click', function() {
             const filter = this.getAttribute('data-filter');
             
-            // Update active button
             filterBtns.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
             
-            // Filter products
             productCards.forEach(card => {
                 const category = card.getAttribute('data-category');
                 
@@ -544,12 +768,10 @@ function initializeFAQ() {
             question.addEventListener('click', function() {
                 const isActive = item.classList.contains('active');
                 
-                // Close all other FAQ items
                 faqItems.forEach(faq => {
                     faq.classList.remove('active');
                 });
                 
-                // Toggle current item
                 if (!isActive) {
                     item.classList.add('active');
                 }
@@ -603,6 +825,66 @@ function hideLoadingScreen() {
     }
 }
 
+// Keyboard Navigation
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const modal = document.getElementById('productModal');
+        const cartSidebar = document.getElementById('cartSidebar');
+        
+        if (navMenu?.classList.contains('active')) {
+            hamburger?.classList.remove('active');
+            navMenu?.classList.remove('active');
+        }
+        
+        if (modal?.classList.contains('active')) {
+            closeProductModal();
+        }
+        
+        if (cartSidebar?.classList.contains('active')) {
+            closeCartSidebar();
+        }
+        
+        const activeFAQ = document.querySelector('.faq-item.active');
+        if (activeFAQ) {
+            activeFAQ.classList.remove('active');
+        }
+    }
+});
+
+// Resize Handler
+window.addEventListener('resize', debounce(() => {
+    if (window.innerWidth > 768) {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        if (hamburger) hamburger.classList.remove('active');
+        if (navMenu) navMenu.classList.remove('active');
+    }
+}, 250));
+
+// Smooth scroll for anchor links
+document.addEventListener('click', function(e) {
+    if (e.target.matches('a[href^="#"]') || e.target.closest('a[href^="#"]')) {
+        const link = e.target.matches('a[href^="#"]') ? e.target : e.target.closest('a[href^="#"]');
+        const href = link.getAttribute('href');
+        
+        if (href && href !== '#') {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                const headerHeight = document.querySelector('.header')?.offsetHeight || 80;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    }
+});
+
 // Add CSS for animations
 const style = document.createElement('style');
 style.textContent = `
@@ -634,60 +916,72 @@ style.textContent = `
     .nav-menu a.active::after {
         width: 100%;
     }
-`;
-document.head.appendChild(style);
-
-// Keyboard Navigation
-document.addEventListener('keydown', function(e) {
-    // ESC key functionality
-    if (e.key === 'Escape') {
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
-        if (navMenu?.classList.contains('active')) {
-            hamburger?.classList.remove('active');
-            navMenu?.classList.remove('active');
+    
+    .cart-item {
+        animation: slideInCart 0.3s ease-out;
+    }
+    
+    @keyframes slideInCart {
+        from {
+            opacity: 0;
+            transform: translateX(20px);
         }
-        
-        // Close FAQ items
-        const activeFAQ = document.querySelector('.faq-item.active');
-        if (activeFAQ) {
-            activeFAQ.classList.remove('active');
+        to {
+            opacity: 1;
+            transform: translateX(0);
         }
     }
-});
-
-// Resize Handler
-window.addEventListener('resize', debounce(() => {
-    // Close mobile menu on resize
-    if (window.innerWidth > 768) {
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
-        if (hamburger) hamburger.classList.remove('active');
-        if (navMenu) navMenu.classList.remove('active');
+    
+    .product-modal.active .modal-content {
+        animation: modalSlideIn 0.3s ease-out;
     }
-}, 250));
-
-// Smooth scroll for anchor links
-document.addEventListener('click', function(e) {
-    if (e.target.matches('a[href^="#"]') || e.target.closest('a[href^="#"]')) {
-        const link = e.target.matches('a[href^="#"]') ? e.target : e.target.closest('a[href^="#"]');
-        const href = link.getAttribute('href');
+    
+    @keyframes modalSlideIn {
+        from {
+            opacity: 0;
+            transform: scale(0.9) translateY(50px);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
+    
+    .cart-sidebar.active {
+        animation: slideInFromRight 0.3s ease-out;
+    }
+    
+    @keyframes slideInFromRight {
+        from {
+            right: -400px;
+        }
+        to {
+            right: 0;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .cart-sidebar.active {
+            animation: slideInFromRight 0.3s ease-out;
+        }
         
-        if (href && href !== '#') {
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                const headerHeight = document.querySelector('.header')?.offsetHeight || 80;
-                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+        @keyframes slideInFromRight {
+            from {
+                right: -100vw;
+            }
+            to {
+                right: 0;
             }
         }
     }
-});
+`;
+
+// Append styles to document
+document.head.appendChild(style);
+
+// Window functions for global access
+window.removeFromCart = removeFromCart;
+window.scrollToSection = scrollToSection;
 
 // Initialize everything when DOM is ready
 if (document.readyState === 'loading') {
