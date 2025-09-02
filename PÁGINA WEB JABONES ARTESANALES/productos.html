@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - NATUAROMA S.A. DE C.V.</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>NATUAROMA</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html" class="active">Productos</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="beneficios.html">Beneficios</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1 class="fade-in">Nuestros Productos</h1>
+                <p class="fade-in-delay">Descubre nuestra línea completa de jabones artesanales naturales</p>
+                <nav class="breadcrumb fade-in-delay-2">
+                    <a href="index.html">Inicio</a>
+                    <span>/</span>
+                    <span>Productos</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <div class="container">
+            <!-- Filter Section -->
+            <div class="products-filter">
+                <h3>Filtrar por categoría:</h3>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="relaxante">Relajantes</button>
+                    <button class="filter-btn" data-filter="hidratante">Hidratantes</button>
+                    <button class="filter-btn" data-filter="exfoliante">Exfoliantes</button>
+                    <button class="filter-btn" data-filter="purificante">Purificantes</button>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid">
+                <div class="product-card animate-on-scroll" data-category="relaxante">
+                    <div class="product-image">
+                        <div class="soap-visual lavanda"></div>
+                        <div class="product-badge">Popular</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Jabón de Lavanda</h3>
+                        <p>Relajante y aromático, perfecto para el cuidado nocturno de la piel. Sus propiedades calmantes ayudan a reducir el estrés.</p>
+                        <div class="product-benefits">
+                            <span><i class="fas fa-leaf"></i> Relajante</span>
+                            <span><i class="fas fa-moon"></i> Nocturno</span>
+                        </div>
+                        <div class="product-price">$45.00</div>
+                        <button class="btn-product">
+                            <i class="fas fa-shopping-cart"></i>
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card animate-on-scroll" data-category="hidratante">
+                    <div class="product-image">
+                        <div class="soap-visual miel"></div>
+                        <div class="product-badge bestseller">Bestseller</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Jabón de Miel</h3>
+                        <p>Hidratante natural con propiedades antibacterianas y suavizantes. Ideal para pieles secas y sensibles.</p>
+                        <div class="product-benefits">
+                            <span><i class="fas fa-droplet"></i> Hidratante</span>
+                            <span><i class="fas fa-shield-alt"></i> Antibacterial</span>
+                        </div>
+                        <div class="product-price">$50.00</div>
+                        <button class="btn-product">
+                            <i class="fas fa-shopping-cart"></i>
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card animate-on-scroll" data-category="exfoliante">
+                    <div class="product-image">
+                        <div class="soap-visual avena"></div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Jabón de Avena</h3>
+                        <p>Exfoliante suave, ideal para pieles sensibles y delicadas. Remueve células muertas sin irritar.</p>
+                        <div class="product-benefits">
+                            <span><i class="fas fa-spa"></i> Exfoliante</span>
+                            <span><i class="fas fa-heart"></i> Suave</span>
+                        </div>
+                        <div class="product-price">$40.00</div>
+                        <button class="btn-product">
+                            <i class="fas fa-shopping-cart"></i>
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card animate-on-scroll" data-category="purificante">
+                    <div class="product-image">
+                        <div class="soap-visual carbon"></div>
+                        <div class="product-badge new">Nuevo</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Jabón de Carbón Activado</h3>
+                        <p>Purificante y detox, perfecto para pieles grasas y mixtas. Absorbe impurezas y controla la grasa.</p>
+                        <div class="product-benefits">
+                            <span><i class="fas fa-magic"></i> Detox</span>
+                            <span><i class="fas fa-balance-scale"></i> Control grasa</span>
+                        </div>
+                        <div class="product-price">$55.00</div>
+                        <button class="btn-product">
+                            <i class="fas fa-shopping-cart"></i>
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card animate-on-scroll" data-category="hidratante">
+                    <div class="product-image">
+                        <div class="soap-visual aloe"></div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Jabón de Aloe Vera</h3>
+                        <p>Ultra hidratante y calmante, perfecto para pieles irritadas o con quemaduras solares.</p>
+                        <div class="product-benefits">
+                            <span><i class="fas fa-leaf"></i> Calmante</span>
+                            <span><i class="fas fa-sun"></i> Post-solar</span>
+                        </div>
+                        <div class="product-price">$48.00</div>
+                        <button class="btn-product">
+                            <i class="fas fa-shopping-cart"></i>
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card animate-on-scroll" data-category="exfoliante">
+                    <div class="product-image">
+                        <div class="soap-visual cafe"></div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Jabón de Café</h3>
+                        <p>Exfoliante energizante con cafeína natural. Estimula la circulación y combate la celulitis.</p>
+                        <div class="product-benefits">
+                            <span><i class="fas fa-bolt"></i> Energizante</span>
+                            <span><i class="fas fa-circulation"></i> Circulación</span>
+                        </div>
+                        <div class="product-price">$52.00</div>
+                        <button class="btn-product">
+                            <i class="fas fa-shopping-cart"></i>
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card animate-on-scroll" data-category="relaxante">
+                    <div class="product-image">
+                        <div class="soap-visual manzanilla"></div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Jabón de Manzanilla</h3>
+                        <p>Suavizante y antiinflamatorio, ideal para pieles sensibles y bebés. Aroma relajante natural.</p>
+                        <div class="product-benefits">
+                            <span><i class="fas fa-baby"></i> Para bebés</span>
+                            <span><i class="fas fa-feather-alt"></i> Suave</span>
+                        </div>
+                        <div class="product-price">$42.00</div>
+                        <button class="btn-product">
+                            <i class="fas fa-shopping-cart"></i>
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card animate-on-scroll" data-category="purificante">
+                    <div class="product-image">
+                        <div class="soap-visual te-verde"></div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Jabón de Té Verde</h3>
+                        <p>Antioxidante y purificante, rico en vitaminas. Protege contra el envejecimiento prematuro.</p>
+                        <div class="product-benefits">
+                            <span><i class="fas fa-shield-alt"></i> Antioxidante</span>
+                            <span><i class="fas fa-clock"></i> Anti-edad</span>
+                        </div>
+                        <div class="product-price">$47.00</div>
+                        <button class="btn-product">
+                            <i class="fas fa-shopping-cart"></i>
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shopping Cart Summary -->
+            <div class="cart-summary">
+                <div class="cart-info">
+                    <h3>Carrito de Compras</h3>
+                    <div class="cart-items">
+                        <p>No hay productos en el carrito</p>
+                    </div>
+                    <div class="cart-total">
+                        <strong>Total: $0.00</strong>
+                    </div>
+                    <button class="btn-checkout" disabled>
+                        <i class="fas fa-credit-card"></i>
+                        Proceder al Pago
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-leaf"></i>
+                        <span>NATUAROMA</span>
+                    </div>
+                    <p>Jabones artesanales naturales para el cuidado de tu piel.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="beneficios.html">Beneficios</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Tuxtla Gutiérrez, Chiapas</p>
+                    <p><i class="fas fa-phone"></i> +52 (961) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> contacto@natuaroma.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NATUAROMA S.A. DE C.V. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
