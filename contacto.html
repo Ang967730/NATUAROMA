@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - NATUAROMA S.A. DE C.V.</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>NATUAROMA</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="beneficios.html">Beneficios</a></li>
+                    <li><a href="contacto.html" class="active">Contacto</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1 class="fade-in">Contáctanos</h1>
+                <p class="fade-in-delay">Estamos aquí para ayudarte y responder todas tus preguntas</p>
+                <nav class="breadcrumb fade-in-delay-2">
+                    <a href="index.html">Inicio</a>
+                    <span>/</span>
+                    <span>Contacto</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <div class="contact-intro animate-on-scroll">
+                <h2>¿Tienes alguna pregunta?</h2>
+                <p>Nos encanta escuchar de nuestros clientes. Ya sea que tengas una consulta sobre nuestros productos, necesites ayuda con tu pedido, o simplemente quieras saber más sobre NATUAROMA, estamos aquí para ti.</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item animate-on-scroll">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Nuestra Ubicación</h4>
+                            <p>Tuxtla Gutiérrez, Chiapas, México</p>
+                            <p>Centro de la ciudad, zona comercial</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item animate-on-scroll">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Teléfono</h4>
+                            <p><a href="tel:+529611234567">+52 (961) 123-4567</a></p>
+                            <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item animate-on-scroll">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p><a href="mailto:contacto@natuaroma.com">contacto@natuaroma.com</a></p>
+                            <p>Responderemos en menos de 24 horas</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item animate-on-scroll">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>WhatsApp</h4>
+                            <p><a href="https://wa.me/529611234567">+52 (961) 123-4567</a></p>
+                            <p>Disponible 24/7 para consultas rápidas</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Envíanos un Mensaje</h3>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nombre">Nombre *</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="apellido">Apellido *</label>
+                                <input type="text" id="apellido" name="apellido" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="asunto">Asunto *</label>
+                            <select id="asunto" name="asunto" required>
+                                <option value="">Selecciona un asunto</option>
+                                <option value="consulta-producto">Consulta sobre productos</option>
+                                <option value="pedido">Información sobre pedidos</option>
+                                <option value="distribucion">Oportunidades de distribución</option>
+                                <option value="colaboracion">Colaboraciones</option>
+                                <option value="sugerencia">Sugerencias</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje *</label>
+                            <textarea id="mensaje" name="mensaje" rows="6" placeholder="Cuéntanos cómo podemos ayudarte..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">Quiero recibir noticias y ofertas especiales de NATUAROMA</label>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="politicas" name="politicas" required>
+                            <label for="politicas">Acepto las <a href="#" target="_blank">políticas de privacidad</a> *</label>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Preguntas Frecuentes</h2>
+                <p class="section-subtitle">Encuentra respuestas rápidas a las preguntas más comunes</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        <h4>¿Los jabones NATUAROMA son realmente 100% naturales?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, todos nuestros jabones están elaborados únicamente con ingredientes naturales y orgánicos. No utilizamos parabenos, sulfatos, conservantes artificiales ni ningún químico dañino.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        <h4>¿Son aptos para pieles sensibles?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutamente. Nuestras fórmulas naturales son especialmente suaves y están diseñadas para ser compatibles con todo tipo de piel, incluyendo las más sensibles.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        <h4>¿Cuánto tiempo duran los jabones?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Con uso normal, cada jabón puede durar entre 4-6 semanas. Su duración depende de la frecuencia de uso y las condiciones de almacenamiento.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        <h4>¿Hacen envíos a otras ciudades?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Actualmente realizamos envíos dentro de Chiapas. Estamos trabajando para ampliar nuestro alcance a otros estados de México muy pronto.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        <h4>¿Puedo visitar el lugar donde elaboran los jabones?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>¡Por supuesto! Ofrecemos visitas programadas a nuestro taller artesanal. Contáctanos para agendar una cita y conocer nuestro proceso de elaboración.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        <h4>¿Ofrecen productos personalizados?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, podemos crear jabones personalizados para eventos especiales, regalos corporativos o necesidades específicas. Contáctanos para discutir tus requerimientos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media -->
+    <section class="social-media">
+        <div class="container">
+            <div class="social-content animate-on-scroll">
+                <h2>Síguenos en Redes Sociales</h2>
+                <p>Mantente al día con nuestras últimas noticias, consejos de cuidado natural y ofertas especiales</p>
+                
+                <div class="social-grid">
+                    <a href="#" class="social-card facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <div class="social-info">
+                            <h4>Facebook</h4>
+                            <p>Consejos diarios y comunidad</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="social-card instagram">
+                        <i class="fab fa-instagram"></i>
+                        <div class="social-info">
+                            <h4>Instagram</h4>
+                            <p>Fotos de nuestros productos</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="social-card whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        <div class="social-info">
+                            <h4>WhatsApp</h4>
+                            <p>Atención personalizada</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="social-card tiktok">
+                        <i class="fab fa-tiktok"></i>
+                        <div class="social-info">
+                            <h4>TikTok</h4>
+                            <p>Proceso de elaboración</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Encuéntranos</h2>
+                <p class="section-subtitle">Visítanos en Tuxtla Gutiérrez, Chiapas</p>
+            </div>
+            
+            <div class="map-container animate-on-scroll">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>NATUAROMA</h4>
+                    <p>Tuxtla Gutiérrez, Chiapas, México</p>
+                    <p>Centro de la ciudad</p>
+                    <a href="https://maps.google.com" target="_blank" class="btn-map">
+                        <i class="fas fa-directions"></i>
+                        Ver en Google Maps
+                    </a>
+                </div>
+            </div>
+            
+            <div class="location-info">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Horarios de Atención</h4>
+                            <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+                            <p>Sábados: 10:00 AM - 4:00 PM</p>
+                            <p>Domingos: Cerrado</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-car"></i>
+                        <div>
+                            <h4>Estacionamiento</h4>
+                            <p>Disponible en el área</p>
+                            <p>Acceso fácil por transporte público</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-credit-card"></i>
+                        <div>
+                            <h4>Métodos de Pago</h4>
+                            <p>Efectivo, tarjetas de débito/crédito</p>
+                            <p>Transferencias bancarias</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content animate-on-scroll">
+                <div class="newsletter-text">
+                    <h3>Suscríbete a nuestro Newsletter</h3>
+                    <p>Recibe consejos de cuidado natural, ofertas especiales y noticias sobre nuevos productos</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Tu email" required>
+                    <button type="submit">
+                        <i class="fas fa-envelope"></i>
+                        Suscribirse
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-leaf"></i>
+                        <span>NATUAROMA</span>
+                    </div>
+                    <p>Jabones artesanales naturales para el cuidado de tu piel.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="beneficios.html">Beneficios</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Tuxtla Gutiérrez, Chiapas</p>
+                    <p><i class="fas fa-phone"></i> +52 (961) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> contacto@natuaroma.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NATUAROMA S.A. DE C.V. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
